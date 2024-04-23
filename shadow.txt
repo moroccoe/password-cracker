@@ -1,0 +1,9 @@
+news:*:19478:0:99999:7:::
+uucp:*:19478:0:99999:7:::
+proxy:*:19478:0:99999:7:::
+www-data:*:19478:0:99999:7:::
+syslog:*:19478:0:99999:7:::
+_apt:*:19478:0:99999:7:::
+uuidd:*:19478:0:99999:7:::
+tcpdump:*:19478:0:99999:7:::
+zelda:$6$NoDUcoDl3jyFo7oJ$a3kwknV522E3MVc2vyzWVgk2UHaB21v0//u2FZWfb/IAEcXghtz9Ad8YaEt0OAaKwNrdyLFJCdMNBiyfJEFHX.:19829:0:99999:7:::

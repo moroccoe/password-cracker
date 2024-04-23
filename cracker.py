@@ -1,22 +1,30 @@
-import hashlib
-import sys
-def computeHashSHA256(salt, pword):
-    salted = salt + pword
-    return hashlib.sha3_256(salted).hexdigest()
+import crypt
 
-def computeHashSHA512Digest(salt, pword):
-    salted = pword + salt
-    return hashlib.sha3_512(salted.encode("utf-8")).digest() 
+def cracker(shadow, passwds):
+    shadwFile = open(shadow, "r")
+    for x in shadwFile:
+        temp1 = x.split(":") #needs less confusing variable name
+        uName = temp1[0]
+        if(temp1[1] == "*"):
+            pass
+        else:
+            temp2 = temp1[1].split('$') #same as temp1. can't think of anything at the moment
+            salt = '$' + temp2[1] + '$' + temp2[2] + '$' #have to add these back in
+            passwordFile = open(passwds, "r")
+            for y in passwordFile:
+                pwd = crypt.crypt(y.strip(), salt)
+                if pwd == temp1[1]:
+                    print("Username: " + uName)
+                    print("Password: " + y.strip())
+                    break
+                else:
+                    pass #this else statement is probably redundant
+            passwordFile.close()
+    shadwFile.close()
+            
 
-def computeHashSHA512(salt, pword):
-    salted = salt + pword
-    return hashlib.sha3_512(salted).hexdigest()
-#$6$NoDUcoDl3jyFo7oJ$a3kwknV522E3MVc2vyzWVgk2UHaB21v0//u2FZWfb/IAEcXghtz9Ad8YaEt0OAaKwNrdyLFJCdMNBiyfJEFHX.:19829:0:99999:7:::
 def main():
-    #print("SHA512: " + computeHashSHA512(b"NoDUcoDl3jyFo7oJ", b"zelda123"))
-    b = computeHashSHA512Digest("NoDUcoDl3jyFo7oJ", "zelda123")
-    with open('out.dat', 'wb') as f:
-        f.write(b)
+    cracker("shadow.txt", "passwords.txt")
 
 if __name__ == "__main__":
     main()
