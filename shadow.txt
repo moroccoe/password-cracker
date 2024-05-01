@@ -1,6 +1,7 @@
 news:*:19478:0:99999:7:::
 uucp:*:19478:0:99999:7:::
 proxy:*:19478:0:99999:7:::
+jeff:$6$Kd9jPngWbUCeakZl$JTqMzjCQeyVEvQRDJ4JUSfX/MKKU.c8ihS6aeJT7kGodosHaG59HPXG4qULnOmivflcFuXHaSgUD4ky6KEraP0:19831:0:99999:7:::
 www-data:*:19478:0:99999:7:::
 syslog:*:19478:0:99999:7:::
 _apt:*:19478:0:99999:7:::
